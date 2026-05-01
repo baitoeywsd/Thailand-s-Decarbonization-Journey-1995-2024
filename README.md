@@ -1,59 +1,184 @@
-# 🌏 Thailand's Decarbonization Journey (1995-2024)
-***Are we truly on the path to Net Zero? A deep dive into ASEAN's energy shift.***
-
-## 1. Why this project? (The Story)
-Thailand has set a bold target: **Net Zero by 2065**. But what does the data actually tell us?
-
-I started this project to look beyond the headlines. By analyzing CO2 emission data from **1995 to 2024**, I compared Thailand with its neighbors—**Indonesia** and **Vietnam**—to see who is leading the "green race." This analysis isn't just about big numbers; it’s about **"Carbon Fairness"** (emissions per capita) and our **"Energy Mix"** (the fuels powering our nation) to identify where the real challenges lie.
-
-## 2. What you’ll get from this analysis
-*   **The ASEAN Showdown:** Who emits more per person? A comparative look at Thailand's standing in the region.
-*   **Our Fuel Secret:** How much do we actually rely on Coal and Gas despite the rise of renewables?
-*   **The Net Zero Reality Check:** Data-driven insights into what needs to change for Thailand to hit its environmental targets.
-
-## 3. Behind the Scenes (The Tech Stack)
-I leveraged a modern data analytics workflow to ensure accuracy and clarity:
-*   **The Data:** Global CO2 emissions dataset (1950-2024) from *Our World in Data*.
-*   **SQL:** Used for data extraction, cleaning, and complex transformations.
-*   **Power BI:** Used for building interactive dashboards and advanced data visualizations.
-*   **The Goal:** Merging Data Analytics with **Sustainability Engineering** to find actionable solutions.
+# 🌏 Thailand's Decarbonization Journey (1995–2024)
+### Are we truly on the path to Net Zero? A data-driven look at ASEAN’s energy transition.
 
 ---
 
-## 4. The ASEAN Showdown: Who's the Real Polluter?
+## 1. Project Overview
+
+Thailand has committed to achieving **Net Zero emissions by 2065**.  
+But beyond policy announcements — what does historical data actually reveal?
+
+This project analyzes CO₂ emission trends from **1995–2024**, comparing Thailand with **Indonesia** and **Vietnam** to understand:
+
+- emission performance per capita (*carbon fairness*)
+- dependence on fossil fuels
+- long-term decarbonization readiness
+
+The goal is to demonstrate how **data analytics supports sustainability decision-making**.
+
+---
+
+## 2. Key Analytical Questions
+
+Before building dashboards, I defined analytical questions to guide the analysis:
+
+- How have emissions per capita evolved across ASEAN peers?
+- Is Thailand stabilizing emissions or still increasing?
+- Which fossil fuel contributes most to emission growth?
+- Are trends aligned with Thailand’s Net Zero ambition?
+
+These questions transformed raw datasets into actionable insights rather than simple visualizations.
+
+---
+
+## 3. Tech Stack & Workflow
+
+**Data Source**
+- Global CO₂ Emissions Dataset (Our World in Data)
+
+**Tools**
+- SQL → data extraction, validation, transformation
+- Power BI → visualization & dashboard development
+
+**Workflow**
+Raw Dataset → SQL Cleaning → Analytical Dataset → Power BI Dashboard → Policy Insights
+
+---
+
+## 4. ASEAN Comparison — Who Emits More?
+
 ![CO2 per Capita](co2_per_capita.png)
-> **Insight:** While Thailand's emissions per capita have plateaued, we still maintain a higher per-person footprint compared to Indonesia and Vietnam. However, Vietnam is rapidly catching up, reflecting its industrial boom.
 
-## 5. What's inside Thailand's Energy Tank?
+**Insight**
+
+Thailand’s emissions per capita have plateaued in recent years, yet remain higher than Indonesia and Vietnam.  
+Vietnam shows the fastest growth trend, reflecting rapid industrial expansion.
+
+**Analytical takeaway:**  
+Regional competition for decarbonization leadership is intensifying.
+
+---
+
+## 5. Thailand's Energy Mix — What Powers Emissions?
+
 ![TH Energy Mix](thailand_energy_mix.png)
-> **Insight:** Thailand’s heavy reliance on Natural Gas has helped reduce the share of Oil, but **Coal** remains a persistent base-load source. Transitioning away from Coal is the "final boss" for our decarbonization goals.
+
+**Insight**
+
+Natural Gas dominates Thailand’s electricity generation and has reduced oil dependency.  
+However, **coal remains a persistent base-load energy source**, slowing decarbonization progress.
+
+**Key risk:** Coal dependency represents the largest structural barrier to Net Zero.
 
 ---
 
-## 6. How I Handled the Data (The SQL Approach)
-To prepare the dataset for Power BI, I used SQL to filter and aggregate the raw data, ensuring a "Single Source of Truth" for the dashboard.
+## 6. Data Preparation & Cleaning
+
+Before analysis, the dataset was validated to ensure analytical reliability.
+
+Key steps included:
+
+- filtering target ASEAN countries
+- removing missing emission records
+- validating population values
+- standardizing country naming
+- preparing derived emission indicators
+
+Example validation queries:
+
 ```sql
-/* Filtering for target countries and relevant years */
-SELECT 
-    country, 
-    year, 
-    co2_per_capita, 
-    coal_co2, 
-    oil_co2, 
-    gas_co2,
-    population
+-- Check missing emission values
+SELECT *
 FROM global_emissions_data
-WHERE country IN ('Thailand', 'Indonesia', 'Vietnam')
-  AND year >= 1995
+WHERE co2_per_capita IS NULL;
+
+-- Validate population scale
+SELECT country,
+       MIN(population),
+       MAX(population)
+FROM global_emissions_data
+GROUP BY country;
+```
+
+---
+
+## 7. SQL Analysis Approach
+
+SQL was used to transform the cleaned dataset into an analytical table optimized for trend analysis and dashboard performance.
+
+```sql
+SELECT
+    country,
+    year,
+    population,
+    co2_per_capita,
+
+    -- Total fossil emissions
+    (coal_co2 + oil_co2 + gas_co2) AS total_fossil_co2,
+
+    -- Year-over-year emission change
+    co2_per_capita -
+        LAG(co2_per_capita) OVER (
+            PARTITION BY country
+            ORDER BY year
+        ) AS yoy_change,
+
+    -- 5-year rolling average trend
+    AVG(co2_per_capita) OVER (
+        PARTITION BY country
+        ORDER BY year
+        ROWS BETWEEN 4 PRECEDING AND CURRENT ROW
+    ) AS rolling_5yr_avg
+
+FROM global_emissions_data
+WHERE country IN ('Thailand','Indonesia','Vietnam')
+AND year >= 1995
 ORDER BY country, year;
+```
 
 ---
 
-## 7. Strategic Roadmap: The Way Forward
-As a Sustainability Professional, I believe data is useless without an action plan. Here are my key takeaways:
+## 8. Interactive Dashboard
 
-1.  **Modernize the Grid:** We must move beyond just adding more solar panels. Thailand needs a **Smart Grid** that can handle the intermittency of renewables to reduce our reliance on Fossil Fuel base-loads.
-2.  **Accelerate the Coal Exit:** While Natural Gas is a "bridge fuel," a clear timeline for decommissioning coal-fired plants is essential for the 2065 Net Zero target.
-3.  **Leverage Carbon Markets:** Strengthening the Carbon Credit ecosystem will provide the financial incentive for industries to decarbonize faster than policy mandates require.
+The analytical dataset was connected to Power BI to build an interactive sustainability dashboard.
+
+**Dashboard Features**
+- Country comparison selector
+- Emission trend monitoring
+- Energy mix visualization
+- Per-capita emission comparison
+
+👉 Power BI Dashboard Link: *(add link here)*
+
+![Dashboard Preview](dashboard_preview.png)
 
 ---
+
+## 9. Strategic Roadmap — Data-Driven Recommendations
+
+Based on analytical findings:
+
+**1. Modernize the Grid**  
+   Smart grid infrastructure is required to support renewable intermittency.
+
+**2. Accelerate Coal Phase-Out**  
+   Coal reduction represents Thailand’s largest decarbonization opportunity.
+
+**3. Strengthen Carbon Markets**  
+   Market incentives can accelerate industrial transition beyond policy mandates.
+
+---
+
+## 10. Limitations & Future Work
+
+Limitations of this analysis:
+
+- Emission data is partially model-based
+- Sector-level emissions (transport, industry, buildings) were not included
+- Renewable capacity does not always represent actual generation output
+
+Future Improvements:
+
+- Integrate GDP and energy intensity indicators
+- Add sector-level emission analysis
+- Develop predictive emission scenarios
