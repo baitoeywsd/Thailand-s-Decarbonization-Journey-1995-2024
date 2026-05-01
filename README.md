@@ -25,7 +25,7 @@ A structured pipeline ensures data integrity and a "Single Source of Truth":
 Comparison of carbon intensity between regional peers to evaluate "Carbon Fairness" relative to population size.
 
 <p align="center">
-  <img src="Graph1.png" width="800">
+  <img src="Graph1.png" width="750">
 </p>
 
 **Key Insight:** Thailand maintains a consistently higher emission rate per person compared to Vietnam, highlighting a more carbon-intensive energy infrastructure.
@@ -35,7 +35,7 @@ Comparison of carbon intensity between regional peers to evaluate "Carbon Fairne
 An analysis of fuel source distribution over three decades, identifying the core dependencies within Thailand’s power sector.
 
 <p align="center">
-  <img src="Graph2.png" width="800">
+  <img src="Graph2.png" width="750">
 </p>
 
 **Key Insight:** Fossil fuels remain the dominant energy source, with a heavy reliance on Natural Gas. While Renewables show growth, the pace is currently insufficient to meet the aggressive 2065 Net Zero timeline.
@@ -45,7 +45,7 @@ An analysis of fuel source distribution over three decades, identifying the core
 A direct comparison between traditional energy reliance and the expansion of clean energy initiatives.
 
 <p align="center">
-  <img src="Graph3.png" width="800">
+  <img src="Graph3.png" width="750">
 </p>
 
 **Key Insight:** Despite increasing investment in solar and wind, the sheer scale of fossil fuel consumption continues to create a "Carbon Lock-in" effect that complicates the rapid transition.
@@ -55,7 +55,7 @@ A direct comparison between traditional energy reliance and the expansion of cle
 This pillar examines the "Decoupling" effect—determining whether Thailand can grow its GDP without a proportional increase in CO2 emissions.
 
 <p align="center">
-  <img src="Graph4.png" width="800">
+  <img src="Graph4.png" width="750">
 </p>
 
 Key Insight: While Thailand shows signs of relative decoupling, the correlation remains strong. Achieving absolute decoupling requires a more aggressive shift in industrial efficiency and low-carbon investment.
