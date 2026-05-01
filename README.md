@@ -15,7 +15,7 @@
 ---
 
 ## 1. Project Abstract
-This analysis summarizes CO2 emission trends over a 29-year period (1995–2024) to evaluate Thailand’s progress toward its **2065 Net Zero target.** By benchmarking national data against regional peers—**Indonesia** and **Vietnam**—this work identifies the key factors and structural challenges involved in the transition to cleaner energy sources.
+This analysis summarizes CO2 emission trends over a 29-year period (1995–2024) to evaluate Thailand’s progress toward its **2065 Net Zero target** *(Ref: Thailand's LT-LEDS)*. By benchmarking national data against regional peers—**Indonesia** and **Vietnam**—this work identifies the key factors and structural challenges involved in the transition to cleaner energy sources.
 
 ## 2. Introduction & Motivation
 The primary goal is to examine the relationship between economic growth and environmental impact. The analysis focuses on Thailand’s **Energy Mix** and its long-term reliance on fossil fuels. By processing three decades of historical data, this study transforms statistical metrics into a clear overview of the country’s current energy trajectory and future outlook.
@@ -26,10 +26,12 @@ A structured pipeline ensures data integrity and a "Single Source of Truth":
 
   **Workflow:** [Data Source] → [SQL] → [Power BI] → [Strategic Roadmap]
   
-* **Source:** Global emissions & energy data (1995–2024) via *Our World in Data*.
+* **Source:** Global CO2 Emissions Dataset (1950–2024) curated by Luca Lullo via **Kaggle**, originally sourced from **Our World in Data (OWID)**.
 * **SQL:** Data cleaning, regional filtering (TH, ID, VN), and YoY calculations.
 * **Power BI:** Interactive dashboards for trend analysis and strategic insights.
 * **Domain Expertise:** Sustainability Engineering principles for data validation.
+
+---
 
 ## 4. Exploratory Data Analysis
 **Pillar 1: The ASEAN Showdown (CO2 per Capita)**
@@ -42,6 +44,8 @@ Comparison of carbon intensity between regional peers to evaluate "Carbon Fairne
 
 **Key Insight:** Thailand maintains a consistently higher emission rate per person compared to Vietnam, highlighting a more carbon-intensive energy infrastructure.
 
+---
+
 **Pillar 2: Thailand’s Energy Mix (1995–2024)**
 
 An analysis of fuel source distribution over three decades, identifying the core dependencies within Thailand’s power sector.
@@ -52,6 +56,8 @@ An analysis of fuel source distribution over three decades, identifying the core
 
 **Key Insight:** Fossil fuels remain the dominant energy source, with a heavy reliance on Natural Gas. While Renewables show growth, the pace is currently insufficient to meet the aggressive 2065 Net Zero timeline.
 
+---
+
 **Pillar 3: Fossil Fuel Persistence vs. Renewable Growth**
 
 A direct comparison between traditional energy reliance and the expansion of clean energy initiatives.
@@ -60,7 +66,9 @@ A direct comparison between traditional energy reliance and the expansion of cle
   <img src="Graph3.png" width="750">
 </p>
 
-**Key Insight:** Despite increasing investment in solar and wind, the sheer scale of fossil fuel consumption continues to create a "Carbon Lock-in" effect that complicates the rapid transition.
+**Key Insight:** Despite increasing investment in solar and wind, the sheer scale of fossil fuel consumption continues to create a "Carbon Lock-in" effect *(Ref: Environmental Economics Framework)* that complicates the rapid transition.
+
+---
 
 **Pillar 4: Economic Growth vs. Emission Intensity**
 
@@ -71,6 +79,8 @@ This pillar examines the "Decoupling" effect—determining whether Thailand can 
 </p>
 
 Key Insight: While Thailand shows signs of relative decoupling, the correlation remains strong. Achieving absolute decoupling requires a more aggressive shift in industrial efficiency and low-carbon investment.
+
+---
 
 ## 5. Strategic Insights & Discussion
 
@@ -99,6 +109,8 @@ WHERE year BETWEEN 1995 AND 2024;
 
 **Key Insight:** Handling data logic at the SQL level ensures high performance in Power BI, allowing for seamless filtering across three decades of historical data.
 
+---
+
 ## 6. Recommendations & Action Plan
 
 Based on the data trends, three strategic pillars are essential for Thailand to bridge the gap toward Net Zero 2065:
@@ -113,6 +125,8 @@ Based on the data trends, three strategic pillars are essential for Thailand to 
 | **Industrial Efficiency** | Deploy AI-driven energy monitoring systems | Absolute decoupling of GDP and Emissions |
 | **Carbon Market** | Finalize Thailand's Emission Trading System (ETS) | Accelerate low-carbon investment |
 
+---
+
 ## 7. Expected Outcomes
 *   **Data-Driven Policy Support:** Providing a clear baseline for carbon reduction targets.
 *   **Public Awareness:** Visualizing the urgency of the energy transition for stakeholders.
@@ -122,6 +136,14 @@ Based on the data trends, three strategic pillars are essential for Thailand to 
 Thailand stands at a critical crossroads. While the transition to a low-carbon economy is underway, the data suggests that current efforts must be doubled to meet the **2065 Net Zero commitment.** This analysis serves as both a progress report and a call to action for systemic change in our energy infrastructure.
 
 ---
+
+## 📚 References & Data Sources
+1. **Lullo, L. (2024).** *Global CO2 Emissions (1950-2024)* via [Kaggle](https://www.kaggle.com/datasets/lucalullo/global-co2-emissions-by-country-1950-2024).
+2. **Our World in Data.** *CO2 and GHG Emissions Database*. [Source](https://ourworldindata.org/co2-and-greenhouse-gas-emissions).
+3. **Official Policy.** *Thailand’s Long-term Low GHG Emission Development Strategy (LT-LEDS)*.
+    
+---
+
 ### 🛠️ Connect with Me
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/weesuda-waiwong)
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](weesuda.ww@gmail.com)
