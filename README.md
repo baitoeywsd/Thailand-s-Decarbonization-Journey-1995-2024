@@ -24,7 +24,9 @@ A structured pipeline ensures data integrity and a "Single Source of Truth":
 
 Comparison of carbon intensity between regional peers to evaluate "Carbon Fairness" relative to population size.
 
-[Insert Graph 1: CO2 Emissions per Capita (1995–2024)]
+<p align="center">
+  <img src="images/Graph1.png" width="600">
+</p>
 
 **Key Insight:** Thailand maintains a consistently higher emission rate per person compared to Vietnam, highlighting a more carbon-intensive energy infrastructure.
 
