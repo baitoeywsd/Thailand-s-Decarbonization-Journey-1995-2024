@@ -12,13 +12,9 @@ In this blog/analysis, we won't just look at big numbers—we'll look at the **"
 * **Our Fuel Secret:** We talk a lot about renewables, but how much do we still rely on Coal and Gas?
 * **The "Net Zero" Reality Check:** Based on the trends, what do we actually need to change to hit our targets?
 
-3. Data Infrastructure
-Data Source: Our World in Data (Global CO2 Emissions Dataset 1950-2024).
-
-Tech Stack:
-
-SQL: Data cleaning and transformation.
-
-Python (Pandas/Seaborn): Advanced analytics and trend forecasting.
-
-Domain Expertise: Sustainability Engineering principles.
+## 3. Behind the Scenes (The Tech)
+I kept it simple but solid:
+* **The Data:** Global CO2 data from Our World in Data.
+* **The Tools:** Used SQL to clean the messy parts and Python to turn those numbers into the charts you see below.
+* **The Goal:** Combining data science with Sustainability Engineering to find real-world solutions.
+* 
