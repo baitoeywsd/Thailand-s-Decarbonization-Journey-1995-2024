@@ -6,10 +6,10 @@
 ## 📑 Table of Contents
 1. [Project Abstract](#1-project-abstract)
 2. [Introduction & Motivation](#2-introduction--motivation)
-3. [Data Infrastructure (SQL & Stack)](#3-data-infrastructure)
-4. [Exploratory Data Analysis (The 4 Pillars)](#4-exploratory-data-analysis-eda)
+3. [Data Infrastructure](#3-data-infrastructure)
+4. [Exploratory Data Analysis](#4-exploratory-data-analysis)
 5. [Strategic Insights & Discussion](#5-strategic-insights--discussion)
-6. [Recommendations & Action Plan](#6-strategic-roadmap--recommendations)
+6. [Recommendations & Action Plan](#6-recommendations--action-plan)
 7. [Expected Outcomes](#7-expected-outcomes)
 8. [Conclusion](#8-conclusion)
 ---
@@ -31,7 +31,7 @@ A structured pipeline ensures data integrity and a "Single Source of Truth":
 * **Power BI:** Interactive dashboards for trend analysis and strategic insights.
 * **Domain Expertise:** Sustainability Engineering principles for data validation.
 
-## 4. Exploratory Data Analysis (EDA)
+## 4. Exploratory Data Analysis
 **Pillar 1: The ASEAN Showdown (CO2 per Capita)**
 
 Comparison of carbon intensity between regional peers to evaluate "Carbon Fairness" relative to population size.
@@ -99,7 +99,7 @@ WHERE year BETWEEN 1995 AND 2024;
 
 **Key Insight:** Handling data logic at the SQL level ensures high performance in Power BI, allowing for seamless filtering across three decades of historical data.
 
-## 6. Strategic Roadmap & Recommendations
+## 6. Recommendations & Action Plan
 
 Based on the data trends, three strategic pillars are essential for Thailand to bridge the gap toward Net Zero 2065:
 
