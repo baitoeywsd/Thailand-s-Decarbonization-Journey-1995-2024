@@ -90,24 +90,24 @@ Key Insight: While Thailand shows signs of relative decoupling, the correlation 
 
 To prepare the dataset for visualization, **Window Functions** were utilized to calculate year-over-year (YoY) growth and regional rankings directly within the SQL layer.
 ```sql
-/* Calculating Year-over-Year (YoY) Growth for CO₂ Emissions using Window Functions (LAG) */
+/* Calculating Year-over-Year (YoY) Growth for CO2 Emissions using Window Functions (LAG) */
 
 WITH CarbonData AS (
     SELECT 
         country, 
         year, 
-        CO₂,
-        -- Fetch previous year's CO₂ value
-        LAG(CO₂) OVER (PARTITION BY country ORDER BY year) AS prev_year_CO₂
-    FROM CO₂_emission_1950_2024 -- Updated to match the uploaded filename
+        co2,
+        -- Fetch previous year's CO2 value
+        LAG(co2) OVER (PARTITION BY country ORDER BY year) AS prev_year_co2
+    FROM co2_emission_1950_2024 -- Updated to match the uploaded filename
     WHERE country IN ('Thailand', 'Indonesia', 'Vietnam')
 )
 SELECT 
     country, 
     year, 
-    CO₂,
+    co2,
     -- Calculation: ((Current - Previous) / Previous) * 100
-    ROUND(((CO₂ - prev_year_CO₂) / NULLIF(prev_year_CO₂, 0)) * 100, 2) AS yoy_growth_percent
+    ROUND(((co2 - prev_year_co2) / NULLIF(prev_year_co2, 0)) * 100, 2) AS yoy_growth_percent
 FROM CarbonData
 WHERE year BETWEEN 1995 AND 2024;
 ```
