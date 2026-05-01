@@ -153,4 +153,5 @@ Thailand stands at a critical crossroads. While the transition to a low-carbon e
 
 ### 🛠️ Connect with Me
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/weesuda-waiwong)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](weesuda.ww@gmail.com)
+
+
