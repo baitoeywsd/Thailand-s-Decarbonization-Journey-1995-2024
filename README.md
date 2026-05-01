@@ -1,12 +1,16 @@
 # 🌏 Thailand's Decarbonization Journey (1995-2024) 🌏
-***A Comparative Analysis of Energy Transition and Emission Efficiency in ASEAN***
-## 1. Project Abstract
-This project investigates Thailand's CO2 emission trajectories from 1995 to 2024, focusing on the transition of energy sources and regional competitiveness within ASEAN. By analyzing per capita emissions, fuel-mix evolution, and cumulative environmental debt, the study identifies critical gaps in Thailand’s Net Zero 2065 roadmap. The findings reveal a plateau in emission efficiency despite economic shifts, highlighting the urgent need for grid modernization and a more aggressive transition away from coal-based power generation.
+***Are we truly on the path to Net Zero? A deep dive into ASEAN's energy shift.***
+## 1. Why this project? (The Story)
+Thailand has set a big goal: Net Zero by 2065. But what does the data actually say?
 
-## 2. Expected Outcomes
-* **Regional Benchmark:** A clear visualization of Thailand’s standing against Indonesia and Vietnam regarding "Carbon Fairness" (CO2 per capita).
-* **Fuel Transition Insights:** In-depth analysis of Thailand’s shift from oil to natural gas and the persistent reliance on coal.
-* **Strategic Roadmaps:** Data-driven recommendations for sustainability engineering, moving beyond simple carbon offsets to structural energy infrastructure reforms.
+I started this project because I wanted to see beyond the news headlines. By looking at CO2 emission data from **1995 to 2024**, I’ve compared Thailand with neighbors like **Indonesia** and **Vietnam** to see who’s actually winning the "green race."
+
+In this blog/analysis, we won't just look at big numbers—we'll look at the **"Carbon Fairness"** (how much we emit per person) and our **"Energy Mix"** (what fuels our country) to see where the real challenges lie.
+
+## 2. What you’ll get from this post
+* **The ASEAN Showdown:** Who emits more per person? You might be surprised where Thailand stands.
+* **Our Fuel Secret:** We talk a lot about renewables, but how much do we still rely on Coal and Gas?
+* **The "Net Zero" Reality Check:** Based on the trends, what do we actually need to change to hit our targets?
 
 3. Data Infrastructure
 Data Source: Our World in Data (Global CO2 Emissions Dataset 1950-2024).
