@@ -2,7 +2,6 @@
 ### *A data-driven deep dive into ASEAN’s energy transition.*
 **Tech Stack:** SQL (Window Functions) | Power BI | Sustainability Engineering
 
----
 ## 📑 Table of Contents
 1. [Project Abstract](#1-project-abstract)
 2. [Introduction & Motivation](#2-introduction--motivation)
@@ -12,13 +11,18 @@
 6. [Recommendations & Action Plan](#6-recommendations--action-plan)
 7. [Expected Outcomes](#7-expected-outcomes)
 8. [Conclusion](#8-conclusion)
+
 ---
 
 ## 1. Project Abstract
-This analysis summarizes CO2 emission trends over a 29-year period (1995–2024) to evaluate Thailand’s progress toward its **2065 Net Zero target** *(Ref: Thailand's LT-LEDS)*. By benchmarking national data against regional peers—**Indonesia** and **Vietnam**—this work identifies the key factors and structural challenges involved in the transition to cleaner energy sources.
+This analysis summarizes CO₂ emission trends over a 29-year period (1995–2024) to evaluate Thailand’s progress toward its **2065 Net Zero target** *(Ref: Thailand's LT-LEDS)*. By benchmarking national data against regional peers—**Indonesia** and **Vietnam**—this work identifies the key factors and structural challenges involved in the transition to cleaner energy sources.
+
+---
 
 ## 2. Introduction & Motivation
 The primary goal is to examine the relationship between economic growth and environmental impact. The analysis focuses on Thailand’s **Energy Mix** and its long-term reliance on fossil fuels. By processing three decades of historical data, this study transforms statistical metrics into a clear overview of the country’s current energy trajectory and future outlook.
+
+---
 
 ## 3. Data Infrastructure
 
@@ -26,7 +30,7 @@ A structured pipeline ensures data integrity and a "Single Source of Truth":
 
   **Workflow:** [Data Source] → [SQL] → [Power BI] → [Strategic Roadmap]
   
-* **Source:** Global CO2 Emissions Dataset (1950–2024) curated by Luca Lullo via **Kaggle**, originally sourced from **Our World in Data (OWID)**.
+* **Source:** Global CO₂ Emissions Dataset (1950–2024) curated by Luca Lullo via **Kaggle**, originally sourced from **Our World in Data (OWID)**.
 * **SQL:** Data cleaning, regional filtering (TH, ID, VN), and YoY calculations.
 * **Power BI:** Interactive dashboards for trend analysis and strategic insights.
 * **Domain Expertise:** Sustainability Engineering principles for data validation.
@@ -34,7 +38,7 @@ A structured pipeline ensures data integrity and a "Single Source of Truth":
 ---
 
 ## 4. Exploratory Data Analysis
-**Pillar 1: The ASEAN Showdown (CO2 per Capita)**
+### Pillar 1: The ASEAN Showdown (CO₂ per Capita)
 
 Comparison of carbon intensity between regional peers to evaluate "Carbon Fairness" relative to population size.
 
@@ -44,9 +48,9 @@ Comparison of carbon intensity between regional peers to evaluate "Carbon Fairne
 
 **Key Insight:** Thailand maintains a consistently higher emission rate per person compared to Vietnam, highlighting a more carbon-intensive energy infrastructure.
 
----
+<br>
 
-**Pillar 2: Thailand’s Energy Mix (1995–2024)**
+### Pillar 2: Thailand’s Energy Mix (1995–2024)
 
 An analysis of fuel source distribution over three decades, identifying the core dependencies within Thailand’s power sector.
 
@@ -56,9 +60,9 @@ An analysis of fuel source distribution over three decades, identifying the core
 
 **Key Insight:** Fossil fuels remain the dominant energy source, with a heavy reliance on Natural Gas. While Renewables show growth, the pace is currently insufficient to meet the aggressive 2065 Net Zero timeline.
 
----
+<br>
 
-**Pillar 3: Fossil Fuel Persistence vs. Renewable Growth**
+### Pillar 3: Fossil Fuel Persistence vs. Renewable Growth
 
 A direct comparison between traditional energy reliance and the expansion of clean energy initiatives.
 
@@ -68,11 +72,11 @@ A direct comparison between traditional energy reliance and the expansion of cle
 
 **Key Insight:** Despite increasing investment in solar and wind, the sheer scale of fossil fuel consumption continues to create a "Carbon Lock-in" effect *(Ref: Environmental Economics Framework)* that complicates the rapid transition.
 
----
+<br>
 
-**Pillar 4: Economic Growth vs. Emission Intensity**
+### Pillar 4: Economic Growth vs. Emission Intensity
 
-This pillar examines the "Decoupling" effect—determining whether Thailand can grow its GDP without a proportional increase in CO2 emissions.
+This pillar examines the "Decoupling" effect—determining whether Thailand can grow its GDP without a proportional increase in CO₂ emissions.
 
 <p align="center">
   <img src="Graph4.png" width="750">
@@ -84,25 +88,26 @@ Key Insight: While Thailand shows signs of relative decoupling, the correlation 
 
 ## 5. Strategic Insights & Discussion
 
-To prepare the dataset for visualization, Window Functions were utilized to calculate year-over-year (YoY) growth and regional rankings directly within the SQL layer.
-
+To prepare the dataset for visualization, **Window Functions** were utilized to calculate year-over-year (YoY) growth and regional rankings directly within the SQL layer.
 ```sql
-/* Calculating Year-over-Year (YoY) Growth for CO2 Emissions using Window Functions (LAG) */
+/* Calculating Year-over-Year (YoY) Growth for CO₂ Emissions using Window Functions (LAG) */
 
 WITH CarbonData AS (
     SELECT 
         country, 
         year, 
-        co2,
-        LAG(co2) OVER (PARTITION BY country ORDER BY year) as prev_year_co2
-    FROM emissions_data
+        CO₂,
+        -- Fetch previous year's CO₂ value
+        LAG(CO₂) OVER (PARTITION BY country ORDER BY year) AS prev_year_CO₂
+    FROM CO₂_emission_1950_2024 -- Updated to match the uploaded filename
     WHERE country IN ('Thailand', 'Indonesia', 'Vietnam')
 )
 SELECT 
     country, 
     year, 
-    co2,
-    ROUND(((co2 - prev_year_co2) / prev_year_co2) * 100, 2) AS yoy_growth_percent
+    CO₂,
+    -- Calculation: ((Current - Previous) / Previous) * 100
+    ROUND(((CO₂ - prev_year_CO₂) / NULLIF(prev_year_CO₂, 0)) * 100, 2) AS yoy_growth_percent
 FROM CarbonData
 WHERE year BETWEEN 1995 AND 2024;
 ```
@@ -132,14 +137,16 @@ Based on the data trends, three strategic pillars are essential for Thailand to 
 *   **Public Awareness:** Visualizing the urgency of the energy transition for stakeholders.
 *   **Methodological Framework:** A scalable SQL-to-Power BI pipeline for ESG reporting.
 
+---
+
 ## 8. Conclusion
 Thailand stands at a critical crossroads. While the transition to a low-carbon economy is underway, the data suggests that current efforts must be doubled to meet the **2065 Net Zero commitment.** This analysis serves as both a progress report and a call to action for systemic change in our energy infrastructure.
 
 ---
 
 ## 📚 References & Data Sources
-1. **Lullo, L. (2024).** *Global CO2 Emissions (1950-2024)* via [Kaggle](https://www.kaggle.com/datasets/lucalullo/global-co2-emissions-by-country-1950-2024).
-2. **Our World in Data.** *CO2 and GHG Emissions Database*. [Source](https://ourworldindata.org/co2-and-greenhouse-gas-emissions).
+1. **Lullo, L. (2024).** *Global CO₂ Emissions (1950-2024)* via [Kaggle](https://www.kaggle.com/datasets/lucalullo/global-CO₂-emissions-by-country-1950-2024).
+2. **Our World in Data.** *CO₂ and GHG Emissions Database*. [Source](https://ourworldindata.org/CO₂-and-greenhouse-gas-emissions).
 3. **Official Policy.** *Thailand’s Long-term Low GHG Emission Development Strategy (LT-LEDS)*.
     
 ---
