@@ -47,6 +47,8 @@ WHERE country IN ('Thailand', 'Indonesia', 'Vietnam')
   AND year >= 1995
 ORDER BY country, year;
 
+---
+
 ## 7. Strategic Roadmap: The Way Forward
 As a Sustainability Professional, I believe data is useless without an action plan. Here are my key takeaways:
 
