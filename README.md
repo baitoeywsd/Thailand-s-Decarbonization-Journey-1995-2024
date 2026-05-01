@@ -5,8 +5,7 @@ This project investigates Thailand's CO2 emission trajectories from 1995 to 2024
 
 ## 2. Expected Outcomes
 * **Regional Benchmark:** A clear visualization of Thailand’s standing against Indonesia and Vietnam regarding "Carbon Fairness" (CO2 per capita).
-
-Fuel Transition Insights: In-depth analysis of Thailand’s shift from oil to natural gas and the persistent reliance on coal.
+* **Fuel Transition Insights:** In-depth analysis of Thailand’s shift from oil to natural gas and the persistent reliance on coal.
 
 Strategic Roadmaps: Data-driven recommendations for sustainability engineering, moving beyond simple carbon offsets to structural energy infrastructure reforms.
 
