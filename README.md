@@ -17,4 +17,5 @@ I kept it simple but solid:
 * **The Data:** Global CO2 data from Our World in Data.
 * **The Tools:** Used SQL to clean the messy parts and Python to turn those numbers into the charts you see below.
 * **The Goal:** Combining data science with Sustainability Engineering to find real-world solutions.
-* 
+
+
