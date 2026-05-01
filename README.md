@@ -18,4 +18,10 @@ I kept it simple but solid:
 * **The Tools:** Used SQL to clean the messy parts and Python to turn those numbers into the charts you see below.
 * **The Goal:** Combining data science with Sustainability Engineering to find real-world solutions.
 
+## 4. The ASEAN Showdown: Who's the Real Polluter?
+![CO2 per Capita](ชื่อไฟล์รูปกราฟอันแรกของมึง.png)
 
+## 5. What's inside Thailand's Energy Tank?
+![TH Energy Mix](ชื่อไฟล์รูปกราฟอันที่สอง.png)
+
+## 6. How I Handled the Data (SQL & Tech)
