@@ -1,5 +1,5 @@
 # 🌏 Thailand's Decarbonization Journey (1995-2024) 🌏
-## A Comparative Analysis of Energy Transition and Emission Efficiency in ASEAN
+### A Comparative Analysis of Energy Transition and Emission Efficiency in ASEAN
 1. Project Abstract
 This project investigates Thailand's CO2 emission trajectories from 1995 to 2024, focusing on the transition of energy sources and regional competitiveness within ASEAN. By analyzing per capita emissions, fuel-mix evolution, and cumulative environmental debt, the study identifies critical gaps in Thailand’s Net Zero 2065 roadmap. The findings reveal a plateau in emission efficiency despite economic shifts, highlighting the urgent need for grid modernization and a more aggressive transition away from coal-based power generation.
 
