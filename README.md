@@ -99,7 +99,7 @@ WITH CarbonData AS (
         co2,
         -- Fetch previous year's CO2 value
         LAG(co2) OVER (PARTITION BY country ORDER BY year) AS prev_year_co2
-    FROM co2_emission_1950_2024 -- Updated to match the uploaded filename
+    FROM co2_emission_1950_2024
     WHERE country IN ('Thailand', 'Indonesia', 'Vietnam')
 )
 SELECT 
